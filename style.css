@@ -1,0 +1,231 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #2c1e16 0%, #1a100c 100%);
+    --card-bg: #2b1b17;
+    --card-border: #4a3325;
+    --text-main: #fdfbf7;
+    --text-muted: #d5bda9;
+    --accent: #d4a373;
+    --accent-hover: #faedcd;
+    --detail-bg: #1f1412;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.header {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.campus-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--detail-bg);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+}
+
+.campus-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.campus-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--accent);
+}
+
+.profile-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem 2rem 4rem 2rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    background: #110906;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.alamat-item {
+    grid-column: 1 / -1;
+}
+
+.detail-item {
+    background: var(--detail-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.maps-container {
+    margin-top: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--card-border);
+}
+
+.maps-title {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--detail-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    z-index: 10;
+    border: 1px solid var(--card-border);
+}
+
+.maps-iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    display: block;
+}
+
+.maps-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--accent);
+    color: #1a0f0c;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+.maps-link:hover {
+    background: var(--accent-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 2rem 1.5rem;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .campus-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .photo-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .maps-iframe {
+        height: 250px;
+    }
+}
